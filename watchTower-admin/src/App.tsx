@@ -10,10 +10,7 @@ import {
 } from "@refinedev/antd";
 import "@refinedev/antd/dist/reset.css";
 
-import dataProvider, {
-  GraphQLClient,
-  liveProvider,
-} from "@refinedev/nestjs-query";
+import {dataProvider, liveProvider} from "./providers/data";
 import routerBindings, {
   CatchAllNavigate,
   DocumentTitleHandler,
