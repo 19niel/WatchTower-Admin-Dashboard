@@ -22,3 +22,7 @@ app.use("/.client", clientRoutes);
 app.use("/general", generalRoutes);
 app.use("/management", manageRoutes);
 app.use("/sales", salesRoutes);
+
+
+
+// ito ay testing lang po
