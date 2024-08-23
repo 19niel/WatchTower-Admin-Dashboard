@@ -33,3 +33,12 @@ app.use("/sales", salesRoutes);
 
 app.use("/accounts", accountsRoutes);
 app.use("/reports", reportsRoutes);
+
+/* MONGOOSE SETUP */
+const PORT = process.env.PORT || 9000; // allows us to access all the environment variable from .env
+mongoose.connect(process.env.MONGO_URL, {
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true,
+}).then(() =>{
+    app.listen(PORT, () => console.log(`Server Port: ${PORT}`))
+}).catch((error) => console.log(`${error} did not connect`))
