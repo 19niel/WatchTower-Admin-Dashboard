@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+const { Schema } = mongoose;
 const CitizenSchema = new mongoose.Schema(
     {
         firstName: {
@@ -17,13 +17,12 @@ const CitizenSchema = new mongoose.Schema(
         username: {
             type: String,
             required: true,
-            max: 100
+            max: 100,
         },
         password: {
             type: String,
             required: true,
             min: 5,
-           
         },
         email: {
             type: String,
@@ -36,17 +35,30 @@ const CitizenSchema = new mongoose.Schema(
             required: false,
             min: 11,
         },
-        address: String,
-        reports: Array,
+        address: {
+            type: [{
+                barangay: { type: String },
+                street: { type: String },
+                houseNumber: { type: String },
+            }],
+            required: true,
+        },
+        profileImage: {
+            type: String, // Store Base64-encoded image as a string
+            required: false, // Set to true if you want to make it mandatory
+        },
+        reports: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Report', // Assuming you have a Report model
+        }],
         role: {
             type: String,
             enum: ["citizen", "rescuer", "admin"],
-            default: "citizen"
+            default: "citizen",
         },
-        
     },
-    { timestamps: true}
+    { timestamps: true }
 );
 
-const Citizen = mongoose.model("Citizen", CitizenSchema);
+const Citizen = mongoose.model('Citizen', CitizenSchema);
 export default Citizen;
