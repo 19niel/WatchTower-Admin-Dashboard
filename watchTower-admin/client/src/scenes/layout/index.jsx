@@ -10,12 +10,11 @@ const Layout = () => {
   const isNonMobile = useMediaQuery("(min-width: 600px)"); // true all false boolean for mobile screens and desktop screens
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const userId = useSelector((state) => state.global.userId); // grab the user ID
-  const { data, error, isLoading } = useGetUserQuery(userId);
+  const { data } = useGetUserQuery(userId);
 
-  console.log("🚀 ~ Layout ~ userId :", userId );
+  
   console.log("🚀 ~ Layout ~ data :", data );
-  console.log("🚀 ~ Layout ~ error :", error );
-  console.log("🚀 ~ Layout ~ isLoading :", isLoading );
+  
   
   return (
   <Box display={isNonMobile ? "flex": "block"} width="100%" height="100%"> {/* Box is a material ui component that allows you to pass in properties like css properties */}
@@ -26,7 +25,7 @@ const Layout = () => {
       isSidebarOpen={isSidebarOpen}
       setIsSidebarOpen={setIsSidebarOpen}
       />
-     <Box>
+     <Box flexGrow={1}> 
       <Navbar 
         user={data || {}}
         isSidebarOpen={isSidebarOpen} // for closing the sidebar using the menu icon

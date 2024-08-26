@@ -17306,6 +17306,12 @@ export const dataAffiliateStat = [
     },
   ];
   
+  export const dataCitizen =[
+    {
+    
+    },
+  ]
+
   export const dataUser = [
     {
       _id: "63701cc1f03239c72c00017f",

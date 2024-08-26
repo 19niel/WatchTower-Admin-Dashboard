@@ -12,12 +12,13 @@ import {
     Typography,
     useTheme
 } from "@mui/material";
+
 import {
     SettingsOutlined,
     ChevronLeft,
     ChevronRightOutlined,
     HomeOutlined,
-    ShoppingCartOutlined,
+    NotificationImportantOutlined,
     Groups2Outlined,
     ReceiptLongOutlined,
     PublicOutlined,
@@ -33,9 +34,9 @@ import profileImage from "assets/profile.jpg";
 
 const navItems = [
     { text: "Dashboard", icon: <HomeOutlined /> },
-    { text: "Client Facing", icon: null },
-    { text: "Products", icon: <ShoppingCartOutlined /> },
-    { text: "Customers", icon: <Groups2Outlined /> },
+    { text: "Overall Reports", icon: null },
+    { text: "Reports", icon: <NotificationImportantOutlined/> },
+    { text: "Accounts", icon: <Groups2Outlined /> },
     { text: "Transactions", icon: <ReceiptLongOutlined /> },
     { text: "Geography", icon: <PublicOutlined /> },
     { text: "Sales", icon: null },
@@ -50,6 +51,7 @@ const navItems = [
 
 const Sidebar = ({ 
     user,
+    citizen,
     drawerWidth, 
     isSidebarOpen, 
     setIsSidebarOpen, 
