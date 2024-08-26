@@ -20,6 +20,7 @@ const Layout = () => {
   return (
   <Box display={isNonMobile ? "flex": "block"} width="100%" height="100%"> {/* Box is a material ui component that allows you to pass in properties like css properties */}
      <Sidebar
+     user={data || {}}// send empty to prevent from breaking the app
       isNonMobile={isNonMobile}
       drawerWidth="250px"
       isSidebarOpen={isSidebarOpen}
@@ -27,6 +28,7 @@ const Layout = () => {
       />
      <Box>
       <Navbar 
+        user={data || {}}
         isSidebarOpen={isSidebarOpen} // for closing the sidebar using the menu icon
         setIsSidebarOpen={setIsSidebarOpen}
       /> {/* Navbar will always exist */}
