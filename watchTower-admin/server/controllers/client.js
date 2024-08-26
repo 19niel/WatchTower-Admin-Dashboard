@@ -3,23 +3,27 @@ import ProductStat from "../models/ProductStat.js";
 
 export const getProducts = async (req, res) => {
     try {
-        const products = await Product.find(); // cycling trhough all the products
+        // Fetch all products
+        const products = await Product.find();
 
-
+        // Combine products with their stats
         const productWithStats = await Promise.all(
             products.map(async (product) => {
-                const stat = await ProductStat.find({ // find the product stat with a specific id
-                    productId: product._id
-                });
-                return { // combining all into a one object
-                    ...product.doc,
-                    stat,
+                // Fetch stats for the current product
+                const stats = await ProductStat.findOne({ productId: product._id });
+
+                // Combine product data with its stats
+                return {
+                    ...product.toObject(), // Convert Mongoose document to plain JavaScript object
+                    stat: stats || {} // Add stats or an empty object if no stats are found
                 };
             })
         );
-            
+
+        // Send the combined result as JSON
         res.status(200).json(productWithStats);
-    } catch (error){
-        res.status(404).json({message: error.message})
+    } catch (error) {
+        // Send error message if something goes wrong
+        res.status(404).json({ message: error.message });
     }
-}
+};

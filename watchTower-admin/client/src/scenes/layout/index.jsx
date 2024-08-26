@@ -12,8 +12,7 @@ const Layout = () => {
   const userId = useSelector((state) => state.global.userId); // grab the user ID
   const { data } = useGetUserQuery(userId);
 
-  
-  console.log("🚀 ~ Layout ~ data :", data );
+
   
   
   return (
@@ -33,7 +32,7 @@ const Layout = () => {
       /> {/* Navbar will always exist */}
       <Outlet /> {/* Outlet represents the components underneath*/}
      </Box>  
-
+      
   </Box>
   );
 };
