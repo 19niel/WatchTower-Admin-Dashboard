@@ -1,4 +1,4 @@
-import React, {UseState} from 'react'
+import React, {useState} from 'react'
 import { 
 LightModeOutlined, 
 DarkModeOutlined, 
@@ -13,10 +13,10 @@ import { setMode } from 'state'; // allows to chage from light mode to dark mode
 import profileImage from "assets/profile.jpg";
 import { AppBar, IconButton, InputBase, Toolbar, useTheme } from '@mui/material';
 
-const Navbar = (
+const Navbar = ({
     isSidebarOpen,
     setIsSidebarOpen,
-) => {
+}) => {
   const dispatch = useDispatch();
   const theme = useTheme();  
   return (
@@ -30,7 +30,7 @@ const Navbar = (
     <Toolbar sx={{ justifyContent: "space-between"}}>
         {/* LEFT SIDE */}
         <FlexBetween>
-            <IconButton onClick={() => setIsSidebarOpen(!setIsSidebarOpen)}>
+            <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
                 <MenuIcon/>
             </IconButton>
             <FlexBetween
