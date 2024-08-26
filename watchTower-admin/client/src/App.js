@@ -18,7 +18,7 @@ function App() {
           <CssBaseline/> {/* resets everything in the css making the code have css defaults automatically*/}
           <Routes>
             <Route element={<Layout />}>  {/* it will the layout component as the main parent */}
-              <Route path="/" element={<Navigate tp="/dashboard" replace />} /> {/* a path that will navigate to the dashboard*/}
+              <Route path="/" element={<Navigate to="/dashboard" replace />} /> {/* a path that will navigate to the dashboard*/}
               <Route path="/dashboard" element={<Dashboard/>} /> {/* redirect */}
             </Route>
           </Routes>
