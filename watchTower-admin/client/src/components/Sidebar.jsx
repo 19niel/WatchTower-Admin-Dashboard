@@ -51,7 +51,6 @@ const navItems = [
 
 const Sidebar = ({ 
     user,
-    citizen,
     drawerWidth, 
     isSidebarOpen, 
     setIsSidebarOpen, 
