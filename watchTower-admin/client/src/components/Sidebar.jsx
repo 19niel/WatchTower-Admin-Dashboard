@@ -35,8 +35,8 @@ import profileImage from "assets/profile.jpg";
 const navItems = [
     { text: "Dashboard", icon: <HomeOutlined /> },
     { text: "Overall Reports", icon: null },
-    { text: "Reports", icon: <NotificationImportantOutlined/> },
-    { text: "Accounts", icon: <Groups2Outlined /> },
+    { text: "Products", icon: <NotificationImportantOutlined/> },
+    { text: "Customers", icon: <Groups2Outlined /> },
     { text: "Transactions", icon: <ReceiptLongOutlined /> },
     { text: "Geography", icon: <PublicOutlined /> },
     { text: "Sales", icon: null },

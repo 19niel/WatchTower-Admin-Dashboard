@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { themeSettings } from "theme";
 import Layout from "scenes/layout";
 import Dashboard from "scenes/dashboard";
-
+import Products from "scenes/products";
 
 function App() {
   const mode = useSelector((state) => state.global.mode); // grab the mode in the state file
@@ -20,6 +20,7 @@ function App() {
             <Route element={<Layout />}>  {/* it will the layout component as the main parent */}
               <Route path="/" element={<Navigate to="/dashboard" replace />} /> {/* a path that will navigate to the dashboard*/}
               <Route path="/dashboard" element={<Dashboard/>} /> {/* redirect */}
+              <Route path="/products" element={<Products/>} />
             </Route>
           </Routes>
         </ThemeProvider>
