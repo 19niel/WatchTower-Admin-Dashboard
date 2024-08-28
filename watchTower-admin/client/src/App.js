@@ -7,6 +7,13 @@ import { themeSettings } from "theme";
 import Layout from "scenes/layout";
 import Dashboard from "scenes/dashboard";
 import Products from "scenes/products";
+import Customers from "scenes/customers";
+import Transactions from "scenes/transactions";
+
+
+
+import Citizens from "scenes/citizens";
+import Reports from "scenes/reports";
 
 function App() {
   const mode = useSelector((state) => state.global.mode); // grab the mode in the state file
@@ -21,6 +28,15 @@ function App() {
               <Route path="/" element={<Navigate to="/dashboard" replace />} /> {/* a path that will navigate to the dashboard*/}
               <Route path="/dashboard" element={<Dashboard/>} /> {/* redirect */}
               <Route path="/products" element={<Products/>} />
+              <Route path="/customers" element={<Customers/>} />
+              <Route path="/transactions" element={<Transactions/>}/>
+              
+              
+              {/* Watch Tower */}
+              <Route path="/citizens" element={<Citizens/>} />
+              <Route path="/reports" element={<Reports/>}/>
+        
+
             </Route>
           </Routes>
         </ThemeProvider>

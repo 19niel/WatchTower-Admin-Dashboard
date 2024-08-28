@@ -16,11 +16,12 @@ import reportsRoutes from "./routes/reports.js";
 // data imports
 import User from "./models/User.js";
 import Product from './models/Products.js';
-import ProductStat from './models/ProductStat.js';
-import {dataUser, dataProduct, dataProductStat} from "./data/index.js";
+import ProductStat from "./models/ProductStat.js";
+import Transaction from "./models/Transaction.js";
+import {dataUser, dataProduct, dataProductStat, dataCitizen, dataTransaction} from "./data/index.js";
 
 
-
+import {citizenAccounts} from "./data/watchtowerfiles.js"
 import Citizen from "./models/Citizen.js";
 import Report from "./models/Report.js";
 import Rescuer from "./models/Rescuer.js";
@@ -60,4 +61,7 @@ mongoose.connect(process.env.MONGO_URL, {
     // Product.insertMany(dataProduct);
     // ProductStat.insertMany(dataProductStat);
     // User.insertMany();
+    //
+    //Transaction.insertMany(dataTransaction);
+    //Citizen.insertMany(citizenAccounts);
 }).catch((error) => console.log(`${error} did not connect`))

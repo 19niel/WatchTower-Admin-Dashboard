@@ -13,7 +13,7 @@ const Layout = () => {
   const { data } = useGetUserQuery(userId);
 
   
-  console.log("🚀 ~ Layout ~ data :", data );
+ 
   
   
   return (

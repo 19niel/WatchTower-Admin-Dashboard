@@ -31,17 +31,14 @@ const CitizenSchema = new mongoose.Schema(
             unique: true,
         },
         mobileNumber: {
-            type: Number,
+            type: String,
             required: false,
             min: 11,
         },
         address: {
-            type: [{
                 barangay: { type: String },
                 street: { type: String },
                 houseNumber: { type: String },
-            }],
-            required: true,
         },
         profileImage: {
             type: String, // Store Base64-encoded image as a string
