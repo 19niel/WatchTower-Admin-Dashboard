@@ -39,7 +39,7 @@ const navItems = [
     { text: "Customers", icon: <Groups2Outlined /> },
     { text: "Transactions", icon: <ReceiptLongOutlined /> },
     { text: "Geography", icon: <PublicOutlined /> },
-    { text: "Sales", icon: null },
+    { text: "Report Statistics", icon: null },
     { text: "Overview", icon: <PointOfSaleOutlined /> },
     { text: "Daily", icon: <HomeOutlined /> },
     { text: "Monthly", icon: <CalendarMonthOutlined /> },
@@ -159,13 +159,13 @@ const Sidebar = ({
                                 fontSize="0.9rem" 
                                 sx={{color: theme.palette.secondary[100]}}
                                 >
-                                    {user.name}
+                                    {user.firstName+" " + user.lastName}
                                 </Typography>
 
                                 <Typography 
                                 fontSize="0.8rem" 
                                 sx={{color: theme.palette.secondary[200]}}>
-                                    {user.occupation}
+                                    {user.role}
                                 </Typography>
                             </Box>
                                 <SettingsOutlined 

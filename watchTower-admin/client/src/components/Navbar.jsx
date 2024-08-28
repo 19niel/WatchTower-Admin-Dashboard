@@ -98,13 +98,13 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen, }) => {
                     fontSize="0.85rem" 
                     sx={{color: theme.palette.secondary[100]}}
                     >
-                        {user.name}
+                        {user.firstName + " "+ user.lastName}
                     </Typography>
 
                     <Typography 
                     fontSize="0.75rem" 
                     sx={{color: theme.palette.secondary[200]}}>
-                        {user.occupation}
+                        {user.role}
                         
                         
                     </Typography>
