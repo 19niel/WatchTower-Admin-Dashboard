@@ -10,7 +10,7 @@ ArrowDropDownOutlined
 import FlexBetween from 'components/FlexBetween';
 import { useDispatch } from 'react-redux';
 import { setMode } from 'state'; // allows to chage from light mode to dark mode
-import profileImage from "assets/profile.jpg";
+import profileImage from "assets/profilepic.png";
 import { 
     AppBar, 
     Button,

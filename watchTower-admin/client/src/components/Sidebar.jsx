@@ -30,7 +30,7 @@ import {
 } from "@mui/icons-material";
 import { useLocation, useNavigate } from 'react-router-dom';
 import FlexBetween from './FlexBetween';
-import profileImage from "assets/profile.jpg";
+import profileImage from "assets/profilepic.png";
 
 const navItems = [
     { text: "Dashboard", icon: <HomeOutlined /> },
