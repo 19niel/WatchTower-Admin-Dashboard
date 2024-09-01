@@ -58,8 +58,7 @@ export const {
      useGetCustomersQuery, 
      useGetTransactionsQuery,
 
-
-
      //// WatchTower
-     useGetCitizensQuery, useGetReportsQuery
+     useGetCitizensQuery, 
+     useGetReportsQuery
     } = api;

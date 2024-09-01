@@ -15,44 +15,30 @@ const ReportSchema = new mongoose.Schema(
         },
         disasterType: {
             type: String,
-            enum: [
-                "Fire", 
-                "Flood", 
-                "Landslide", 
-                "Typhoon", 
-                "Heatwave", 
-                "Other"
-            ],
             required: true
         },
-        disasterTitle: {
+        disasterImage: {
             type: String,
-            trim: true,
-            min: 3,
-            max: 100,
-            // Title is optional for all disaster types
         },
-        description: {
+        disasterInfo: {
             type: String,
             required: true,
             min: 5,
         },
-        disasterStatus: [{
-            status: {
+        disasterStatus: {
                 type: String,
-                enum: ["Pending", "In Progress", "Solved", "Failed", "Acknowledged", "Under Review"],
+                enum: ["Pending", "In Progress", "Solved", "Failed", "Under Review"],
                 default: "Pending"
-            },
-            updatedAt: {
-                type: Date,
-                default: Date.now
-            }
-        }],
+        },
         rescuerId: {
             type: Schema.Types.ObjectId,
             ref: 'Rescuer', // Reference to Rescuer collection
             required: false
         },
+        isVerified:{
+            type: Boolean,
+            default: false
+        }
     },
     { timestamps: true }
 );

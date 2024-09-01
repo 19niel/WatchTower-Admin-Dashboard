@@ -9,7 +9,7 @@ const Citizens = () => {
 
     const theme = useTheme();
     const{ data, isLoading} = useGetCitizensQuery();
-    console.log("🚀 ~ Citizens ~ data:", data)
+    // console.log("🚀 ~ Citizens ~ data:", data)
 
   const columns = [
     {

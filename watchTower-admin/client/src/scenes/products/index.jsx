@@ -13,6 +13,8 @@ import {
 } from "@mui/material";
 import Header from "components/Header";
 import { useGetProductsQuery} from "state/api";
+import { DataGrid } from '@mui/x-data-grid';
+
 
 const Product = ({
   _id,
@@ -87,6 +89,7 @@ const Products = () => {
   return (
     <Box m="1.5rem 2.5rem">
       <Header title="PRODUCTS" subtitle="See your list of products."/>
+
       {data || !isLoading ? (
         <Box 
         mt="20px" 

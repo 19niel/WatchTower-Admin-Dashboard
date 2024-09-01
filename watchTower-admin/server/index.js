@@ -18,10 +18,10 @@ import User from "./models/User.js";
 import Product from './models/Products.js';
 import ProductStat from "./models/ProductStat.js";
 import Transaction from "./models/Transaction.js";
-import {dataUser, dataProduct, dataProductStat, dataCitizen, dataTransaction} from "./data/index.js";
+import {dataUser, dataProduct, dataProductStat, dataTransaction} from "./data/index.js";
 
 
-import {citizenAccounts} from "./data/watchtowerfiles.js"
+import {dataCitizen, dataReports} from "./data/watchtowerfiles.js"
 import Citizen from "./models/Citizen.js";
 import Report from "./models/Report.js";
 import Rescuer from "./models/Rescuer.js";

@@ -102,42 +102,44 @@ export const getCitizens = async(req, res) => {
 
 
 export const getReports = async (req, res) => { // use this for reports
-    // try {
-    //     // sort should look like this: {"field": "userId", sort: "desc"}
-    //     const { page = 1, pageSize = 20, sort = null, search = ""} = req.query; // sending it to the frontend
+    try {
+        // sort should look like this: { "field": "userId", "sort": "desc"}
+        const { page = 1, pageSize = 20, sort = null, search = "" } = req.query;
+        //const tReports = await Report.find({ isVerified: true });
 
-    //     // formatted sort should look like { userId: -1}
-    //     const generateSort = () => {
-    //         const sortParsed = JSON.parse(sort);
-    //         const sortFormatted = {
-    //             [sortParsed.field]: sortParsed.sort = "asc" ? 1 : -1
-    //         };
 
-    //         return sortFormatted;
-    //     }
-    //     const sortFormatted = Boolean(sort) ? generateSort() : {};
+        // formatted sort should look like { userId: -1}
+        const generateSort = () => {
+            const sortParsed = JSON.parse(sort);
+            const sortFormatted = {
+                [sortParsed.field]: sortParsed.sort = "asc" ? 1 : -1
+            };
 
-    //     const transactions = await Transaction.find({
-    //         $or: [
-    //             { cost: { $regex: new RegExp(search, "i")} }, // checking for cost using regular search
-    //             { userId: { $regex: new RegExp(search, "i")} } // checking for user id using regular search
-    //         ],
+            return sortFormatted;
+        }
+        const sortFormatted = Boolean(sort) ? generateSort() : {};
+
+        const report = await Report.find({ // to be able to only search these 2 columns
+            $or: [
+                { disasterType: { $regex: new RegExp(search, "i")} }, // checking for cost using regular search
+                { reporterId: { $regex: new RegExp(search, "i")} } // checking for user id using regular search
+            ],
            
-    //     })
-    //         .sort(sortFormatted)
-    //         .skip(page * pageSize) // skipping pages
-    //         .limit(pageSize); // giving all the term of what the user request in the frontend
-        
-    //     const total = await Transaction.countDocuments({
-    //         name: {$regex: search, $options: "i"} // getting the total count
-    //     })
+        })
+        .sort(sortFormatted)
+        .skip(page * pageSize) // skipping pages
+        .limit(pageSize); // giving all the term of what the user request in the frontend
+    
+    const total = await Transaction.countDocuments({
+        name: {$regex: search, $options: "i"} // getting the total count
+    });
 
-    //     res.status(200).json({
-    //         transactions, 
-    //         total
-    //     });
-    //   } catch (error) {
-    //       // Send error message if something goes wrong
-    //       res.status(404).json({ message: error.message });
-    //   }
-}
+    res.status(200).json({
+        report, 
+        total
+    });
+  } catch (error) {
+      // Send error message if something goes wrong
+      res.status(404).json({ message: error.message });
+  }
+}  

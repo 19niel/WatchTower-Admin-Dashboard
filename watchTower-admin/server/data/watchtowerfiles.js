@@ -1,4 +1,4 @@
-export const citizenAccounts = [
+export const dataCitizen = [
     {
         _id: "66cf2271f2a2d369a1e8e79e",
         firstName: "Kobe",
@@ -33,4 +33,20 @@ export const citizenAccounts = [
         profileImage: "to be added",
         reports: [],
         role: "admin",}
+
+
+        
+]
+//  spare ID
+export const dataReports = [ {
+        _id: "63701cc1f03239c72c000182",
+        reporterId: "66cc2f274aec4c32e965d452",
+        location: "Kobe",
+        disasterType: "Fire",
+        disasterImage:[ "to be added", "to be added"],
+        disasterInfo: "May Sunog sa 3rd Floor",
+        disasterStatus: "Under Review",
+        rescuerId: "no rescuer yet",
+        isVerified: false
+  }
 ]
