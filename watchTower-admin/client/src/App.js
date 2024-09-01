@@ -14,7 +14,7 @@ import Transactions from "scenes/transactions";
 
 import Citizens from "scenes/citizens";
 import Reports from "scenes/reports";
-
+import ReportsMap from "scenes/reportsMap";
 function App() {
   const mode = useSelector((state) => state.global.mode); // grab the mode in the state file
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]); // grabbing the state so the global mode will pass it to the theme settings
@@ -35,6 +35,8 @@ function App() {
               {/* Watch Tower */}
               <Route path="/citizens" element={<Citizens/>} />
               <Route path="/reports" element={<Reports/>}/>
+              <Route path="/map" element={<ReportsMap/>}/>
+              
         
 
             </Route>

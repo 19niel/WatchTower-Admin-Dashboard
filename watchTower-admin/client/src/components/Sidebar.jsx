@@ -26,8 +26,9 @@ import {
     CalendarMonthOutlined,
     AdminPanelSettingsOutlined,
     TrendingUpOutlined,
-    PieChartOutlined
+    PieChartOutlined,
 } from "@mui/icons-material";
+import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
 import { useLocation, useNavigate } from 'react-router-dom';
 import FlexBetween from './FlexBetween';
 import profileImage from "assets/profilepic.png";
@@ -37,10 +38,11 @@ const navItems = [
     { text: "Overall Reports", icon: null },
     { text: "Products", icon: <NotificationImportantOutlined/> },
     { text: "Customers", icon: <Groups2Outlined /> },
-    { text: "Citizens", icon: <Groups2Outlined /> },
     { text: "Transactions", icon: <ReceiptLongOutlined /> },
     { text: "Reports", icon: <NotificationImportantOutlined/> },
-    { text: "Geography", icon: <PublicOutlined /> },
+    { text: "Map", icon: <RoomOutlinedIcon/>},
+    { text: "Accounts", icon: null },
+    { text: "Citizens", icon: <Groups2Outlined /> },
     { text: "Report Statistics", icon: null },
     { text: "Overview", icon: <PointOfSaleOutlined /> },
     { text: "Daily", icon: <HomeOutlined /> },

@@ -3,7 +3,9 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const api = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_URL }),
     reducerPath: "adminApi",
-    tagTypes: ["User", "Products", "Customers", "Citizens"],
+    tagTypes: ["User", "Products", "Customers", 
+               "Citizens", "ReportsMap"
+                ],
     endpoints: (build) => ({
         getUser: build.query({
             query: (id) => `general/user/${id}`, // Make sure this matches your API
@@ -31,7 +33,7 @@ export const api = createApi({
 
             providesTags: ["Transactions"]
         }),
-        
+       
         
         ////////// WatchTower ///////
         getCitizens: build.query({
@@ -44,9 +46,13 @@ export const api = createApi({
                 method: "GET",
                 params: {page, pageSize, sort, search},
             }),
-
             providesTags: ["Reports"]
         }),
+        getReportsMap : build.query({
+            query: () => "client/reportsmap",
+            providesTags: ["ReportsMap"],
+        }),
+        
     }),
 });
 
@@ -60,5 +66,6 @@ export const {
 
      //// WatchTower
      useGetCitizensQuery, 
-     useGetReportsQuery
+     useGetReportsQuery,
+     useGetReportsMapQuery
     } = api;

@@ -5,15 +5,7 @@ import { useGetReportsQuery } from 'state/api';
 import Header from "components/Header";
 import DataGridCustomToolbar from "components/DataGridCustomToolbar"; 
 
-import { Search } from '@mui/icons-material';
-import { IconButton, TextField, InputAdornment } from '@mui/material';
-import { GridToolbarDensitySelector, 
-    GridToolbarContainer, 
-    GridToolbarExport,
-    GridToolbarColumnsButton 
 
-
-} from '@mui/x-data-grid';
 
 const Reports = () => {
     const theme = useTheme();

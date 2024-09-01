@@ -143,3 +143,13 @@ export const getReports = async (req, res) => { // use this for reports
       res.status(404).json({ message: error.message });
   }
 }  
+
+export const getReportsMap = async (req, res) => {
+    try{
+        // const users  = await User.find();
+        // const reportLocations = user.reduce();
+
+    } catch (error) {
+        res.status(404).json({ message: error.message })
+    }
+}

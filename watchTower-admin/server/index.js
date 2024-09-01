@@ -27,6 +27,7 @@ import Report from "./models/Report.js";
 import Rescuer from "./models/Rescuer.js";
 
 
+
 /* Configuration */
 dotenv.config()
 const app = express();
