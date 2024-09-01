@@ -36,8 +36,8 @@ const Reports = () => {
             flex: 0.8,
         },
         {
-            field: "disasterType",
-            headerName: "Disaster Type",
+            field: "disasterCategory",
+            headerName: "Disaster Category",
             flex: 0.6,
         },
         {
