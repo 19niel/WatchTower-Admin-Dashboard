@@ -21,10 +21,11 @@ import Transaction from "./models/Transaction.js";
 import {dataUser, dataProduct, dataProductStat, dataTransaction} from "./data/index.js";
 
 
-import {dataCitizen, dataReports} from "./data/watchtowerfiles.js"
+import {dataCitizen, dataReports, dataOverallReportStat} from "./data/watchtowerfiles.js"
 import Citizen from "./models/Citizen.js";
 import Report from "./models/Report.js";
 import Rescuer from "./models/Rescuer.js";
+import OverallStat from './models/OverallStat.js';
 
 
 
@@ -65,4 +66,5 @@ mongoose.connect(process.env.MONGO_URL, {
     //
     //Transaction.insertMany(dataTransaction);
     //Citizen.insertMany(citizenAccounts);
+    //OverallStat.insertMany(dataOverallReportStat);
 }).catch((error) => console.log(`${error} did not connect`))
