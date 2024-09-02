@@ -7,10 +7,10 @@ import { useGetReportsStatQuery } from 'state/api';
 const OverviewChart = ({ isDashboard = false, view}) => {
 
     const theme = useTheme();
-    const {data, isLoading} = useGetReportsStatQuery;
+    const {data, isLoading} = useGetReportsStatQuery();
     console.log("🚀 ~ OverviewChart ~ data:", data)
     
-
+        // 4:42:01
   return (
     <div>
       Overview Chart
