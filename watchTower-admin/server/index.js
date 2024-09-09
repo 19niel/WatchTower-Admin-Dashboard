@@ -56,15 +56,14 @@ const PORT = process.env.PORT || 9000; // allows us to access all the environmen
 mongoose.connect(process.env.MONGO_URL, {
     // useNewUrlParser: true,
     // useUnifiedTopology: true,
-}).then(() =>{
-    app.listen(PORT, () => console.log(`Server Port: ${PORT}`))
+}).then(() => {
+    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
     // Only Add Data One Time
     // Product.insertMany(dataProduct);
     // ProductStat.insertMany(dataProductStat);
-    // User.insertMany();
-    //
-    //Transaction.insertMany(dataTransaction);
-    //Citizen.insertMany(citizenAccounts);
-    //OverallStat.insertMany(dataOverallReportStat);
-}).catch((error) => console.log(`${error} did not connect`))
+    // User.insertMany(dataUser);
+    // Transaction.insertMany(dataTransaction);
+    // Citizen.insertMany(dataCitizen);
+    // OverallStat.insertMany(dataOverallReportStat);
+}).catch((error) => console.log(`${error} did not connect`));
