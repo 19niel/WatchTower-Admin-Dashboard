@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 const { Schema } = mongoose;
-const CitizenSchema = new mongoose.Schema(
+const RescuerSchema = new mongoose.Schema(
     {
         firstName: {
             type: String,
@@ -31,31 +31,29 @@ const CitizenSchema = new mongoose.Schema(
             unique: true,
         },
         mobileNumber: {
-            type: String,
+            type: Number,
             required: false,
             min: 11,
-        },
-        address: {
-                barangay: { type: String },
-                street: { type: String },
-                houseNumber: { type: String },
         },
         profileImage: {
             type: String, // Store Base64-encoded image as a string
             required: false, // Set to true if you want to make it mandatory
         },
-        reports: [{
+        reportsTaken: [{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Report', // Assuming you have a Report model
         }],
         role: {
             type: String,
-            enum: ["citizen", "admin"],
-            default: "citizen",
+            default: "rescuer",
         },
+        status: {
+            type: String,
+            enum: ["Active", "Inactive", "On a Mission"]
+        }
     },
     { timestamps: true }
 );
 
-const Citizen = mongoose.model('Citizen', CitizenSchema);
-export default Citizen;
+const Rescuer = mongoose.model('Rescuer', RescuerSchema);
+export default Rescuer;Rescuer

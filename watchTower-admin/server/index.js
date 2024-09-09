@@ -15,10 +15,18 @@ import reportsRoutes from "./routes/reports.js";
 
 // data imports
 import User from "./models/User.js";
-import {dataUser} from "./data/index.js";
+import Product from './models/Products.js';
+import ProductStat from "./models/ProductStat.js";
+import Transaction from "./models/Transaction.js";
+import {dataUser, dataProduct, dataProductStat, dataTransaction} from "./data/index.js";
 
+
+import {dataCitizen, dataReports, dataOverallReportStat} from "./data/watchtowerfiles.js"
 import Citizen from "./models/Citizen.js";
 import Report from "./models/Report.js";
+import Rescuer from "./models/Rescuer.js";
+import OverallStat from './models/OverallStat.js';
+
 
 
 /* Configuration */
@@ -31,6 +39,8 @@ app.use(morgan("common"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(cors());
+
+
 
 /* ROUTES */
 app.use("/client", clientRoutes);
@@ -46,9 +56,14 @@ const PORT = process.env.PORT || 9000; // allows us to access all the environmen
 mongoose.connect(process.env.MONGO_URL, {
     // useNewUrlParser: true,
     // useUnifiedTopology: true,
-}).then(() =>{
-    app.listen(PORT, () => console.log(`Server Port: ${PORT}`))
+}).then(() => {
+    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
     // Only Add Data One Time
-    // User.insertMany();
-}).catch((error) => console.log(`${error} did not connect`))
+    // Product.insertMany(dataProduct);
+    // ProductStat.insertMany(dataProductStat);
+    // User.insertMany(dataUser);
+    // Transaction.insertMany(dataTransaction);
+    // Citizen.insertMany(dataCitizen);
+    // OverallStat.insertMany(dataOverallReportStat);
+}).catch((error) => console.log(`${error} did not connect`));
