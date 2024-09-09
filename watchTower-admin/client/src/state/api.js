@@ -4,7 +4,7 @@ export const api = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_URL }),
     reducerPath: "adminApi",
     tagTypes: ["User", "Products", "Customers", 
-               "Citizens", "ReportsMap"
+               "Citizens", "ReportsMap", "ReportsStat"
                 ],
     endpoints: (build) => ({
         getUser: build.query({
@@ -52,7 +52,10 @@ export const api = createApi({
             query: () => "client/reportsmap",
             providesTags: ["ReportsMap"],
         }),
-        
+        getReportsStat : build.query({
+            query: () => "reports/reports",
+            providesTags: ["ReportsStat"],
+        })
     }),
 });
 
@@ -67,5 +70,6 @@ export const {
      //// WatchTower
      useGetCitizensQuery, 
      useGetReportsQuery,
-     useGetReportsMapQuery
+     useGetReportsMapQuery,
+     useGetReportsStatQuery
     } = api;
